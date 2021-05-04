@@ -15,7 +15,7 @@ export const enum PlayerInventoryActionType {
     Drop = "drop"
 }
 
-export interface PickUpPlayerInventoryAction {
+interface PickUpPlayerInventoryAction {
     type: PlayerInventoryActionType.PickUp;
     itemStack: ItemStack;
 }
@@ -29,9 +29,15 @@ export function pickUpPlayerInventoryAction(
     };
 }
 
-export interface DropPlayerInventoryAction {
+interface DropPlayerInventoryAction {
     type: PlayerInventoryActionType.Drop;
     itemStack: ItemStack;
+}
+
+export function dropPlayerInventoryAction(
+    itemStack: ItemStack
+): DropPlayerInventoryAction {
+    return { itemStack, type: PlayerInventoryActionType.Drop };
 }
 
 export type PlayerInventoryAction =

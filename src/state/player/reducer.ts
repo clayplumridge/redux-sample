@@ -9,7 +9,7 @@ import {
 import { addItemStack } from "./inventory/util";
 import { Inventory, PlayerStats } from "./types";
 
-export const PlayerStatReducer: Reducer<PlayerStats, PlayerStatAction> = (
+const PlayerStatReducer: Reducer<PlayerStats, PlayerStatAction> = (
     state = {},
     action
 ) => {
@@ -21,10 +21,10 @@ export const PlayerStatReducer: Reducer<PlayerStats, PlayerStatAction> = (
     }
 };
 
-export const PlayerInventoryReducer: Reducer<
-    Inventory,
-    PlayerInventoryAction
-> = (state = { items: [] }, action) => {
+const PlayerInventoryReducer: Reducer<Inventory, PlayerInventoryAction> = (
+    state = { items: [] },
+    action
+) => {
     switch (action.type) {
         case PlayerInventoryActionType.PickUp:
             return addItemStack(state, action.itemStack);

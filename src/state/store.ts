@@ -6,7 +6,7 @@ import {
 import { combineReducers, createStore } from "redux";
 import playerReducer from "./player/reducer";
 
-export const rootReducer = combineReducers({ player: playerReducer });
+const rootReducer = combineReducers({ player: playerReducer });
 export const store = createStore(rootReducer);
 export type State = ReturnType<typeof store.getState>;
 export type Dispatch = typeof store.dispatch;
