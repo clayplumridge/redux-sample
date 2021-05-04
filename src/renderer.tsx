@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { pickUpPlayerInventoryAction } from "./state/player/action";
-import { ItemStack } from "./state/player/types";
+import { pickUpPlayerInventoryAction } from "./state/player/inventory/action";
+import { ItemStack } from "./state/player/inventory/types";
 import { store, useDispatch, useSelector } from "./state/store";
 
 const App: React.FC<{}> = () => {

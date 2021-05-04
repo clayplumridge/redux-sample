@@ -1,42 +1,6 @@
-import produce from "immer";
-import { combineReducers, Reducer } from "redux";
-import {
-    PlayerInventoryAction,
-    PlayerInventoryActionType,
-    PlayerStatAction,
-    PlayerStatActionType
-} from "./action";
-import { addItemStack } from "./inventory/util";
-import { Inventory, PlayerStats } from "./types";
-
-const PlayerStatReducer: Reducer<PlayerStats, PlayerStatAction> = (
-    state = {},
-    action
-) => {
-    switch (action.type) {
-        case PlayerStatActionType.Update:
-            return produce(state, draft => {});
-        default:
-            return state;
-    }
-};
-
-const PlayerInventoryReducer: Reducer<Inventory, PlayerInventoryAction> = (
-    state = { items: [] },
-    action
-) => {
-    switch (action.type) {
-        case PlayerInventoryActionType.PickUp:
-            return addItemStack(state, action.itemStack);
-        case PlayerInventoryActionType.Drop:
-            const updatedStack = produce(action.itemStack, draft => {
-                draft.quantity *= -1;
-            });
-            return addItemStack(state, updatedStack);
-        default:
-            return state;
-    }
-};
+import { combineReducers } from "redux";
+import PlayerInventoryReducer from "./inventory/reducer";
+import PlayerStatReducer from "./stats/reducer";
 
 export default combineReducers({
     inventory: PlayerInventoryReducer,

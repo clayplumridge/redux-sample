@@ -1,5 +1,5 @@
 import produce from "immer";
-import { Inventory, ItemStack } from "@/state/player/types";
+import { Inventory, ItemStack } from "@/state/player/inventory/types";
 
 export function addItemStack(inv: Inventory, stack: ItemStack) {
     return produce(inv, draft => {

@@ -1,15 +1,7 @@
+import { Inventory } from "./inventory/types";
+import { PlayerStats } from "./stats/types";
+
 export interface PlayerState {
     stats: PlayerStats;
     inventory: Inventory;
-}
-
-export interface PlayerStats {}
-
-export interface Inventory {
-    items: ItemStack[];
-}
-
-export interface ItemStack {
-    itemId: string;
-    quantity: number;
 }
