@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { pickUpPlayerInventoryAction } from "./state/player/inventory/action";
+import { pickUpInventoryAction } from "./state/player/inventory/action";
 import { ItemStack } from "./state/player/inventory/types";
 import { store, useDispatch, useSelector } from "./state/store";
 
@@ -44,9 +44,7 @@ const GetItemButton: React.FC<{ itemStack: ItemStack }> = ({ itemStack }) => {
     const dispatch = useDispatch();
 
     return (
-        <button
-            onClick={() => dispatch(pickUpPlayerInventoryAction(itemStack))}
-        >
+        <button onClick={() => dispatch(pickUpInventoryAction(itemStack))}>
             Get {itemStack.quantity}x {itemStack.itemId}
         </button>
     );

@@ -1,35 +1,31 @@
 import { ItemStack } from "./types";
 
-export const enum PlayerInventoryActionType {
+export const enum InventoryActionType {
     PickUp = "pickup",
     Drop = "drop"
 }
 
-interface PickUpPlayerInventoryAction {
-    type: PlayerInventoryActionType.PickUp;
+interface PickUpInventoryAction {
+    type: InventoryActionType.PickUp;
     itemStack: ItemStack;
 }
 
-export function pickUpPlayerInventoryAction(
+export function pickUpInventoryAction(
     itemStack: ItemStack
-): PickUpPlayerInventoryAction {
+): PickUpInventoryAction {
     return {
         itemStack,
-        type: PlayerInventoryActionType.PickUp
+        type: InventoryActionType.PickUp
     };
 }
 
-interface DropPlayerInventoryAction {
-    type: PlayerInventoryActionType.Drop;
+interface DropInventoryAction {
+    type: InventoryActionType.Drop;
     itemStack: ItemStack;
 }
 
-export function dropPlayerInventoryAction(
-    itemStack: ItemStack
-): DropPlayerInventoryAction {
-    return { itemStack, type: PlayerInventoryActionType.Drop };
+export function dropInventoryAction(itemStack: ItemStack): DropInventoryAction {
+    return { itemStack, type: InventoryActionType.Drop };
 }
 
-export type PlayerInventoryAction =
-    | PickUpPlayerInventoryAction
-    | DropPlayerInventoryAction;
+export type InventoryAction = PickUpInventoryAction | DropInventoryAction;

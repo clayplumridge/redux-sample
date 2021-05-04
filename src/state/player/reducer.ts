@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import PlayerInventoryReducer from "./inventory/reducer";
-import PlayerStatReducer from "./stats/reducer";
+import inventoryReducer from "./inventory/reducer";
+import statReducer from "./stats/reducer";
 
 export default combineReducers({
-    inventory: PlayerInventoryReducer,
-    stats: PlayerStatReducer
+    inventory: inventoryReducer,
+    stats: statReducer
 });

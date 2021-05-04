@@ -1,18 +1,15 @@
 import { Reducer } from "react";
 import produce from "immer";
-import { PlayerStatAction, PlayerStatActionType } from "./action";
+import { StatAction, StatActionType } from "./action";
 import { PlayerStats } from "./types";
 
-const PlayerStatReducer: Reducer<PlayerStats, PlayerStatAction> = (
-    state = {},
-    action
-) => {
+const StatReducer: Reducer<PlayerStats, StatAction> = (state = {}, action) => {
     switch (action.type) {
-        case PlayerStatActionType.Update:
+        case StatActionType.Update:
             return produce(state, draft => {});
         default:
             return state;
     }
 };
 
-export default PlayerStatReducer;
+export default StatReducer;

@@ -1,9 +1,9 @@
-export const enum PlayerStatActionType {
+export const enum StatActionType {
     Update = "update"
 }
 
-export interface UpdatePlayerStatAction {
-    type: PlayerStatActionType.Update;
+export interface UpdateStatAction {
+    type: StatActionType.Update;
 }
 
-export type PlayerStatAction = UpdatePlayerStatAction;
+export type StatAction = UpdateStatAction;
